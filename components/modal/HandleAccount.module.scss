@@ -1,0 +1,33 @@
+.form_wrapper{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    input{
+        width: 100%;
+        order: 1;
+    }
+    button{
+        order: 2;
+        background-color: #006ace;
+        color: white;
+        border-radius: 5px;
+        &:hover{
+            background-color: #40a9ff;
+        }
+    }
+    p{
+        order: 3;
+    }
+}
+
+.btn_back{
+    display: inline-flex;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    padding: 10px;
+}

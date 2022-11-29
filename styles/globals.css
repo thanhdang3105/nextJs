@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 62.5%;
 }
 
 a {
@@ -15,12 +16,114 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body{
+  --text-color: black;
+  --background-hover: #f1f1f1;
+  --avatar-fill: rgb(209, 209, 209);
+  --border-color: rgb(212, 212, 212);
+  --shadow-color: rgba(212, 212, 212,0.2);
+  --span-color: rgb(150, 150, 150);
+  --active-color: rgb(50,50,50);
+}
+
+body.dark{
+  --text-color: white;
+  --background-hover: rgb(90, 90, 90);
+  --avatar-fill: rgb(53, 53, 53);
+  --border-color: rgb(136, 136, 136);
+  --shadow-color: rgba(136, 136, 136, 0.2);
+  --span-color: rgb(190, 190, 190);
+}
+
+body{
+  color: var(--text-color);
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+body::-webkit-scrollbar{
+  width: 5px;
+  height: 100%;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: gray;
+}
+
+.iconButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 2rem;
+  border-radius: 999px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.iconButton:hover{
+  background-color: var(--background-hover);
+}
+
+.avatar-user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 16px;
+  border-radius: 99px;
+  font-size: 2rem;
+  line-height: 1rem;
+  font-weight: bold;
+  background-color: var(--avatar-fill);
+  user-select: none;
+  cursor: pointer;
+}
+
+.input{
+  height: 100%;
+  padding: 8px;
+  border-radius: 99px;
+  outline: none;
+  border: 2px solid var(--border-color);
+}
+
+button.btn{
+  width: fit-content;
+  min-width: 100px;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  outline: none;
+}
+button.btn:hover{
+  background-color: #eee;
+}
+
+button.btn_submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+p.text_link{
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: rgb(122, 122, 255);
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+p.text_link:hover{
+  color: blue;
 }

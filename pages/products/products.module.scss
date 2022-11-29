@@ -1,0 +1,143 @@
+.heading_pageProduct{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem 0;
+    .filter_select{
+        padding: 0.5rem;
+        font-size: 1.6rem;
+        line-height: 1;
+        option{
+            font-size: 1.6rem;
+            &::first-letter{
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+
+
+//-----------------------------pages/products/[slug]-------------------
+.wrapper_products{
+    width: 100%;
+    .product_view{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        .product_view-img{
+            width: 70%;
+            img{
+                object-fit: contain;
+            }
+        }
+        .product_view-info{
+            width: 30%;
+            margin: 0 0 5vh;
+            padding: 0 16px;
+            border-left: 1px solid var(--border-color);
+            .info_name{
+                margin: 0;
+                line-height: 1.2;
+            }
+            .info_label{
+                color: var(--span-color);
+                font-size: 1.2rem;
+            }
+            .info_price{
+                font-weight: bold;
+                span{
+                    text-decoration: line-through;
+                    color: var(--span-color);
+                    font-weight: normal;
+                    margin-right: 5px;
+                }
+                strong{
+                    font-size: 2rem;
+                    color: red;
+                }
+            }
+            .info_listOption{
+                display: flex;
+                list-style: none;
+                align-items: center;
+                padding: 0;
+                flex-wrap: wrap;
+                gap: 1rem;
+                .info_listOption-title{
+                    display: block;
+                    width: 100%;
+                    font-weight: bold;
+                }
+                .info_listOption-item{
+                    button{
+                        text-transform: capitalize;
+                        font-size: 1.4rem;
+                        min-width: 50px;
+                    }
+                    &.active{
+                        button{
+                            border-color: var(--text-color);
+                            font-weight: bold;
+                            position: relative;
+                            &::after{
+                                content: "✓";
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                font-size: 0.8rem;
+                                line-height: 1;
+                                border: 7px solid black;
+                                width: 0;
+                                height: 0;
+                                border-left-color: transparent;
+                                border-top-color: transparent;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+            .info_description{
+                .info_description-title{
+                    margin: 1rem 0;
+                }
+                .info_description-text{
+                    max-height: 250px;
+                    margin: 0;
+                    overflow: hidden;
+                    transition: all .5s linear;
+                    text-overflow: ellipsis;
+                }
+                .info_description-more{
+                    display: block;
+                    width: 100%;
+                    color: var(--span-color);
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: var(--background-hover);
+                    }
+                }
+            }
+            .info_addCart{
+                padding: 1rem;
+                color: white;
+                background-color: black;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .heading_pageProduct{
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        .filter_select{
+            width: 100%;
+        }
+    }
+}
