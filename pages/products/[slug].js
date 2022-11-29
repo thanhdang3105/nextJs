@@ -3,6 +3,7 @@ import styles from './products.module.scss'
 import BannerSlider from '../../components/slider/BannerSlider'
 import DefaultLayout from '../../layouts'
 import BreadcrumbComponent from '../../components/breadcrumb'
+import RateComment from '../../components/rateComment'
 
 
 const Products = [
@@ -70,9 +71,10 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}) {
+    const productInfo = Products.find(product => product.slug === params.slug)
     return {
         props: {
-            data: Products.find(product => product.slug === params.slug)
+            data: productInfo
         }
     }
 }
@@ -162,6 +164,7 @@ export default function ProductInfo({data}) {
                     </div>
                 </div>
             </div>
+            <RateComment />
         </DefaultLayout>
     )
 }

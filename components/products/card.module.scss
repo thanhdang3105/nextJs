@@ -35,12 +35,15 @@
                 padding: 0 1rem;
                 .product_info{
                     width: 100%;
-                    height: 30%;
+                    height: max-content;
                     flex: 1;
+                    gap: 5px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     .product_info-name{
+                        height: max-content;
+                        max-height: 50%;
                         font-size: 1.8rem;
                         line-height: 1;
                         margin: 0;
